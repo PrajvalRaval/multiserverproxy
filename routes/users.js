@@ -59,7 +59,7 @@ router.post('/register', async (req,res) => {
 			password
 		  });
 		
-		newUser.index({createdAt: 1},{expireAfterSeconds: 30})
+		newUser.createIndex({createdAt: 1},{expireAfterSeconds: 30})
 		.then(user => console.log(user))
 		.catch(err => console.log(err));
   
