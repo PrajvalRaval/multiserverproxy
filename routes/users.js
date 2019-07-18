@@ -71,7 +71,7 @@ router.post('/register', async (req,res) => {
 		// 	console.log(err)
 		// })
 
-		res.send(`Data Stored`);
+		//res.send(`Data Stored`);
 
 		
 	} else {
