@@ -65,7 +65,7 @@ router.post('/register', async (req,res) => {
 		console.log(newUser);
 
 		
-		User.findOne({_id : '155600'})
+		User.findOne({_id : '274760'})
 		 .then(user =>{
 		 	console.log(user);
 		 })
