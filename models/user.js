@@ -21,7 +21,7 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  createdAt: { type: Date, expires: 3600 }
+  expireAt: { type: Date, default: Date.now, index: { expires: '5m' } }
 });
 
 const User = mongoose.model('User', UserSchema);
