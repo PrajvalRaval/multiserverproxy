@@ -1,7 +1,11 @@
 const mongoose = require('mongoose');
 
 const UserSchema = new mongoose.Schema({
-  username: {
+  _id: {
+    type: String,
+    required: true
+  },
+  serverurl: {
     type: String,
     required: true
   },
@@ -9,15 +13,15 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  password: {
+  userid: {
     type: String,
     required: true
   },
-  date: {
-    type: Date,
-    default: Date.now
+  authtoken: {
+    type: String,
+    required: true
   },
-  createdAt: { type: Date, expires: '1m', default: Date.now }
+  createdAt: { type: Date, expires: '5m', default: Date.now }
 });
 
 const User = mongoose.model('User', UserSchema);
