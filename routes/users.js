@@ -64,14 +64,14 @@ router.post('/register', async (req,res) => {
 	
 		console.log(newUser);
 
-		//var uid = 135131;
-		// User.findOne({_id : '266929'})
-		// .then(user =>{
-		// 	console.log(user);
-		// })
-		// .catch(err => {
-		// 	console.log(err)
-		// })
+		
+		User.findOne({_id : '155600'})
+		 .then(user =>{
+		 	console.log(user);
+		 })
+		 .catch(err => {
+		 	console.log(err)
+		 })
 
 		res.send(`Data Stored at : ${_id}`);
 
