@@ -3,7 +3,7 @@ const axios = require('axios');
 
 //Mongo Model
 
-const User = require('../models/User');
+const User = require('../models/user');
 
 const router = express.Router();
 
@@ -45,13 +45,20 @@ router.post('/register', async (req,res) => {
 	
 	if(loginData.status == 'true'){
 
-		var userid = loginData.userId;
-		var authtoken = loginData.authToken;
+		//var userid = loginData.userId;
+		//var authtoken = loginData.authToken;
 		//const _id = Math.floor(100000 + Math.random() * 900000);
 
-		const newUser = new User({
+		/*const newUser = new User({
 			serverurl,servername,username,password,userid,authtoken
-		},{ expireAfterSeconds: 3600 });
+		},{ expireAfterSeconds: 3600 });*/
+
+		const newUser = new User({
+			name,
+			servername,
+			password
+		  });
+  
 	
 		console.log(newUser);
 

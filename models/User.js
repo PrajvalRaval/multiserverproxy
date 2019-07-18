@@ -1,11 +1,7 @@
 const mongoose = require('mongoose');
 
 const UserSchema = new mongoose.Schema({
-  // _id: {
-  //   type: String,
-  //   required: true
-  // },
-  serverurl: {
+  name: {
     type: String,
     required: true
   },
@@ -13,22 +9,14 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  username: {
-    type: String,
-    required: true
-  },
   password: {
     type: String,
     required: true
   },
-  userid: {
-    type: String,
-    required: true
-  },
-  authtoken: {
-    type: String,
-    required: true
-  },
+  date: {
+    type: Date,
+    default: Date.now
+  }
 });
 
 const User = mongoose.model('User', UserSchema);
