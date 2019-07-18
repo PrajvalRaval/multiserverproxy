@@ -54,7 +54,7 @@ router.post('/register', async (req,res) => {
 		},{ expireAfterSeconds: 3600 });*/
 
 		const newUser = new User({
-			name,
+			username,
 			servername,
 			password
 		  });
@@ -71,7 +71,7 @@ router.post('/register', async (req,res) => {
 		// 	console.log(err)
 		// })
 
-		res.send(`Data Stored at: ${userid}`);
+		res.send(`Data Stored`);
 
 		
 	} else {
