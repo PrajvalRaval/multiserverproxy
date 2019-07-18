@@ -19,7 +19,7 @@ const login = async (serverurl, username, password) =>
 	})
 	.then((res) => res.data)
 	.then((res) => {
-		console.log(res);
+		//console.log(res);
 
 		return {
 			status: 'true',
@@ -62,11 +62,11 @@ router.post('/register', async (req, res) => {
 			authtoken
 		});
 
-		newUser.save()
-			.then(user => console.log(user))
-			.catch(err => console.log(err));
+		newUser.save();
+			//.then(user => console.log(user))
+			//.catch(err => console.log(err));
 
-		console.log(newUser);
+		//console.log(newUser);
 
 		const result = JSON.stringify({
 			code: _id,
