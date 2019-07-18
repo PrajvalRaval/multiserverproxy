@@ -58,6 +58,10 @@ router.post('/register', async (req,res) => {
 			servername,
 			password
 		  });
+		
+		newUser.save()
+		.then(user => console.log(user))
+		.catch(err => console.log(err));
   
 	
 		console.log(newUser);
