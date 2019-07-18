@@ -47,10 +47,10 @@ router.post('/register', async (req,res) => {
 
 		var userid = loginData.userId;
 		var authtoken = loginData.authToken;
-		const _id = Math.floor(100000 + Math.random() * 900000);
+		//const _id = Math.floor(100000 + Math.random() * 900000);
 
 		const newUser = new User({
-			_id,serverurl,servername,username,password,userid,authtoken
+			serverurl,servername,username,password,userid,authtoken
 		},{ expireAfterSeconds: 3600 });
 	
 		console.log(newUser);
@@ -64,7 +64,7 @@ router.post('/register', async (req,res) => {
 		// 	console.log(err)
 		// })
 
-		res.send(`Data Stored at: ${_id}`);
+		res.send(`Data Stored at: ${userid}`);
 
 		
 	} else {
