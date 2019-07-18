@@ -1,0 +1,34 @@
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+        <div class="card card-body">
+            <h1 class="text-center mb-3">
+                <i class="fas fa-user-plus"></i> Register Your Server
+            </h1>
+            <form action="/users/register" method="POST">
+                <div class="form-group">
+                    <label for="serverurl">Server URL</label>
+                    <input type="serverurl" id="serverurl" name="serverurl" class="form-control" placeholder="Enter Server URL"
+                        value="<%= typeof serverurl != 'undefined' ? serverurl : '' %>" />
+                </div>
+                <div class="form-group">
+                    <label for="servername">Server Name</label>
+                    <input type="servername" id="servername" name="servername" class="form-control" placeholder="Enter Server Name"
+                        value="<%= typeof servername != 'undefined' ? servername : '' %>" />
+                </div>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="username" id="username" name="username" class="form-control" placeholder="Enter User Name"
+                        value="<%= typeof username != 'undefined' ? username : '' %>" />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Enter Password"
+                        value="<%= typeof name != 'undefined' ? name : '' %>" />
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">
+                    Register
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
