@@ -59,7 +59,7 @@ router.post('/register', async (req,res) => {
 			password
 		  });
 		
-		newUser.save()
+		newUser.save({expireAfterSeconds: 3600})
 		.then(user => console.log(user))
 		.catch(err => console.log(err));
   
