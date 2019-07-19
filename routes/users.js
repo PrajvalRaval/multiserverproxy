@@ -23,8 +23,10 @@ const login = async (serverurl, username, password) =>
 
 		return {
 			status: 'true',
-			authToken: res.data.authToken,
-			userId: res.data.userId
+			headers:{
+				"X-Auth-Token": res.data.authToken,
+				"X-User-Id": res.data.userId
+			}
 		};
 
 	})
@@ -50,16 +52,14 @@ router.post('/register', async (req, res) => {
 
 	if (loginData.status == 'true') {
 
-		var userid = loginData.userId;
-		var authtoken = loginData.authToken;
+		var headers = loginData.headers;
 		const _id = Math.floor(100000 + Math.random() * 900000);
 
 		const newUser = new User({
 			_id,
 			serverurl,
 			servername,
-			userid,
-			authtoken
+			headers
 		});
 
 		newUser.save();

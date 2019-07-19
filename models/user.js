@@ -13,13 +13,15 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  userid: {
-    type: String,
-    required: true
-  },
-  authtoken: {
-    type: String,
-    required: true
+  headers: {
+    "X-Auth-Token": {
+      type: String,
+      required: true
+    },
+    "X-User-Id": {
+      type: String,
+      required: true
+    }
   },
   expireAt: { type: Date, default: Date.now, index: { expires: '5m' } }
 });
